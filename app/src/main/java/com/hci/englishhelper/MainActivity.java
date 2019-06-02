@@ -384,41 +384,55 @@ public class MainActivity extends AppCompatActivity implements EventListener, Ph
         if (isSpeaking == false) {
             isSpeaking = true;
             stop();//停止语音合成；
+            voice.setEnabled(false);
             voice.setBackgroundResource(R.drawable.speaking);
             startASR();
             information.setText("");
             Toast.makeText(this, "开始识别", Toast.LENGTH_SHORT).show();
+
         } else {
             isSpeaking = false;
+            stop();
             stopASR();
             Toast.makeText(this, "识别结束", Toast.LENGTH_SHORT).show();
             voice.setBackgroundResource(R.drawable.microphone);
             //这里添加识别判断执行相应操作！
+
             if (finalResult.contains("我想查询")) {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
                         String query=finalResult.substring(finalResult.indexOf("询")+1);
-                        String resultJson = new TransApi().getTransResult(query, "auto", "en");
-                        //拿到结果，对结果进行解析。
-                        Gson gson = new Gson();
-                        TranslateResult translateResult = gson.fromJson(resultJson, TranslateResult.class);
-                        final List<TranslateResult.TransResultBean> trans_result = translateResult.getTrans_result();
-                        //这里注意：必须用handler，否则线程阻塞。
-                        mainHandler.post(new Runnable() {
-                            @Override
-                            public void run() {
-                                String dst = "";
-                                for (TranslateResult.TransResultBean s : trans_result
-                                        ) {
-                                    dst = dst + "\n" + s.getDst();
+                        if(!query.trim().equals("")) {
+                            String resultJson = new TransApi().getTransResult(query, "auto", "en");
+                            //拿到结果，对结果进行解析。
+                            Gson gson = new Gson();
+                            TranslateResult translateResult = gson.fromJson(resultJson, TranslateResult.class);
+                            final List<TranslateResult.TransResultBean> trans_result = translateResult.getTrans_result();
+                            //这里注意：必须用handler，否则线程阻塞。
+                            mainHandler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    String query=finalResult.substring(finalResult.indexOf("询")+1);
+                                    String dst = "";
+                                    for (TranslateResult.TransResultBean s : trans_result
+                                            ) {
+                                        dst = dst + "\n" + s.getDst();
+                                    }
+
+                                    speak(query+"的英文是" + dst);
+                                    information.setText(query+"\n"+dst.trim());
                                 }
-
-                                speak("你想查询的单词是" + dst);
-                                information.setText(dst.trim());
-                            }
-                        });
-
+                            });
+                        }else{
+                            mainHandler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    speak("你还没有告诉我你要查询的单词是什么哦！");
+                                    information.setText("再试一次吧！");
+                                }
+                            });
+                        }
                     }
                 }).start();
             }
