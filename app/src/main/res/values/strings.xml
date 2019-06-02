@@ -1,4 +1,16 @@
 <resources>
     <string name="app_name">EnglishHelper</string>
-    <string name="action_settings">Settings</string>
+    <!-- 欢迎语 -->
+    <string-array name="welcome_tips">
+        <item>欢迎使用EnglishHelper,快点击下方话筒来调戏我吧～</item>
+        <item>欢迎使用EnglishHelper,说说看我想查询加中文来向我提问吧！</item>
+        <item>欢迎使用EnglishHelper,可以跟我说打电话给老师向老师求助哦！</item>
+        <item>欢迎使用EnglishHelper,说说看每日一词来学习一个新单词吧！</item>
+        <item>欢迎使用EnglishHelper,今天你英语进步了吗？</item>
+    </string-array>
+    <string name="setting_title">Set the phone number of your teacher</string>
+    <string name="setting_confirm">Confirm</string>
+    <string name="setting_button">Settings</string>
+    <string name="help_button">Help</string>
+    <string name="text_field">Phone Number</string>
 </resources>
