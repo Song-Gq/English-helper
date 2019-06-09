@@ -42,7 +42,15 @@
         <item>找找</item>
         <item>查查</item>
         <item>找找</item>
+        <item>找一下</item>
+        <item>查一下</item>
+        <item>搜一下</item>
+        <item>找一找</item>
+        <item>查一查</item>
+        <item>搜一搜</item>
         <item>找</item>
+        <item>查</item>
+        <item>搜</item>
     </string-array>
 
 </resources>
