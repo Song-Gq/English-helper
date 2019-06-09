@@ -33,6 +33,7 @@
         android:background="@drawable/speak"
         android:contentDescription="@string/speak_button_description"
         android:onClick="voiceRecognition"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="@+id/background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,6 +72,7 @@
         android:background="@drawable/help"
         android:contentDescription="@string/help_button_description"
         android:onClick="settingDialog"
+        android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

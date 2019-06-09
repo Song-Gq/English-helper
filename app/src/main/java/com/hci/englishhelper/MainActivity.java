@@ -417,6 +417,7 @@ public class MainActivity extends AppCompatActivity implements EventListener, Ph
         if (isSpeaking == false) {
             isSpeaking = true;
             stop();//停止语音合成；
+            tvAniamtion.stopAnimation();
             voice.setEnabled(false);
             voice.setBackgroundResource(R.drawable.recognizing);
             startASR();
