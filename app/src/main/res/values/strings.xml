@@ -2,15 +2,47 @@
     <string name="app_name">EnglishHelper</string>
     <!-- 欢迎语 -->
     <string-array name="welcome_tips">
-        <item>欢迎使用EnglishHelper,快点击下方话筒来调戏我吧～</item>
-        <item>欢迎使用EnglishHelper,说说看我想查询加中文来向我提问吧！</item>
-        <item>欢迎使用EnglishHelper,可以跟我说打电话给老师向老师求助哦！</item>
-        <item>欢迎使用EnglishHelper,说说看每日一词来学习一个新单词吧！</item>
-        <item>欢迎使用EnglishHelper,今天你英语进步了吗？</item>
+        <item>欢迎使用English Helper，快点击下方话筒来调戏我吧～</item>
+        <item>欢迎使用English Helper，说说看我想查询+中文来向我提问吧！</item>
+        <item>欢迎使用English Helper，可以跟我说打电话给老师向老师求助哦！</item>
+        <item>欢迎使用English Helper，说说看每日一词来学习一个新单词吧！</item>
+        <item>欢迎使用English Helper，今天你英语进步了吗？</item>
     </string-array>
-    <string name="setting_title">Set the phone number of your teacher</string>
-    <string name="setting_confirm">Confirm</string>
-    <string name="setting_button">Settings</string>
-    <string name="help_button">Help</string>
-    <string name="text_field">Phone Number</string>
+    <string name="setting_title">请在此填写老师的电话号码</string>
+    <string name="setting_confirm_button">保存</string>
+    <string name="setting_text_field">电话</string>
+    <string name="background_description">background image</string>
+    <string name="help_button_description">help and settings</string>
+    <string name="speak_button_description">tap and speak</string>
+    <string-array name="keywords_post">
+        <item>的英语</item>
+        <item>的英文</item>
+        <item>的外文</item>
+        <item>的外语</item>
+        <item>的翻译</item>
+        <item>的意思</item>
+        <item>用英语</item>
+        <item>用英文</item>
+        <item>怎么说</item>
+        <item>怎么讲</item>
+        <item>的讲法</item>
+        <item>的说法</item>
+        <item>是什么</item>
+        <item>是啥</item>
+    </string-array>
+    <string-array name="keywords_pre">
+        <item>查询</item>
+        <item>知道</item>
+        <item>搜索</item>
+        <item>查找</item>
+        <item>搜寻</item>
+        <item>了解</item>
+        <item>理解</item>
+        <item>搜搜</item>
+        <item>找找</item>
+        <item>查查</item>
+        <item>找找</item>
+        <item>找</item>
+    </string-array>
+
 </resources>

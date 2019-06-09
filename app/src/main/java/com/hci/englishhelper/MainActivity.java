@@ -1,6 +1,9 @@
 package com.hci.englishhelper;
 
 import android.Manifest;
+import android.app.IntentService;
+import android.app.Notification;
+import android.app.PendingIntent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.media.AudioManager;
@@ -76,6 +79,7 @@ public class MainActivity extends AppCompatActivity implements EventListener, Ph
     protected boolean enableOffline = false;
     //连续存放最后的识别结果
     public String finalResult;
+    private Boolean recogDone = false;
 
     // ================== 初始化参数设置开始 ==========================
     /**
@@ -116,7 +120,8 @@ public class MainActivity extends AppCompatActivity implements EventListener, Ph
         setContentView(R.layout.activity_main);
         information = (TextView) findViewById(R.id.information);
         voice = (ImageButton) findViewById(R.id.voice);
-        tvAniamtion = new TextViewAnimation(information, "您需要什么帮助？", 100);//调用构造方法，直接开启
+        String welcomeStr = getRandomWelcomeTips();
+        tvAniamtion = new TextViewAnimation(information, welcomeStr, 100);//调用构造方法，直接开启
         initView();
         initPermission();
         initTTs();
@@ -124,7 +129,7 @@ public class MainActivity extends AppCompatActivity implements EventListener, Ph
         // 基于sdk集成1.3 注册自己的输出事件类
         asr.registerListener(this);
         //myRecognizer = new MyRecognizer(this, listener);
-        speak(getRandomWelcomeTips());
+        speak(welcomeStr);
 
         // Restore preferences
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
@@ -378,6 +383,34 @@ public class MainActivity extends AppCompatActivity implements EventListener, Ph
 
     }
 
+    //检查是否存在后置关键词，并返回去除关键词后的结果
+    private String matchKeywords_post(String str) {
+        String[] keyword_array = this.getResources()
+                .getStringArray(R.array.keywords_post);
+        for(String s:keyword_array)
+        {
+            if(str.contains(s))
+            {
+                return str.substring(0, str.indexOf(s));
+            }
+        }
+        return str;
+    }
+
+    //检查是否存在前置关键词，并返回去除关键词后的结果
+    private String matchKeywords_pre(String str) {
+        String[] keyword_array = this.getResources()
+                .getStringArray(R.array.keywords_pre);
+        for(String s:keyword_array)
+        {
+            if(str.contains(s))
+            {
+                return str.substring(str.indexOf(s) + s.length());
+            }
+        }
+        return str;
+    }
+
     //按钮按下的监听函数
     public void voiceRecognition(View view) {
         //speak("");
@@ -385,8 +418,9 @@ public class MainActivity extends AppCompatActivity implements EventListener, Ph
             isSpeaking = true;
             stop();//停止语音合成；
             voice.setEnabled(false);
-            voice.setBackgroundResource(R.drawable.speaking);
+            voice.setBackgroundResource(R.drawable.recognizing);
             startASR();
+            recogDone = false;
             information.setText("");
             Toast.makeText(this, "开始识别", Toast.LENGTH_SHORT).show();
 
@@ -395,57 +429,73 @@ public class MainActivity extends AppCompatActivity implements EventListener, Ph
             stop();
             stopASR();
             Toast.makeText(this, "识别结束", Toast.LENGTH_SHORT).show();
-            voice.setBackgroundResource(R.drawable.microphone);
+            voice.setBackgroundResource(R.drawable.speak);
             //这里添加识别判断执行相应操作！
 
-            if (finalResult.contains("我想查询")) {
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        String query=finalResult.substring(finalResult.indexOf("询")+1);
-                        if(!query.trim().equals("")) {
-                            String resultJson = new TransApi().getTransResult(query, "auto", "en");
-                            //拿到结果，对结果进行解析。
-                            Gson gson = new Gson();
-                            TranslateResult translateResult = gson.fromJson(resultJson, TranslateResult.class);
-                            final List<TranslateResult.TransResultBean> trans_result = translateResult.getTrans_result();
-                            //这里注意：必须用handler，否则线程阻塞。
-                            mainHandler.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    String query=finalResult.substring(finalResult.indexOf("询")+1);
-                                    String dst = "";
-                                    for (TranslateResult.TransResultBean s : trans_result
-                                            ) {
-                                        dst = dst + "\n" + s.getDst();
+            if(recogDone)
+            {
+                if (matchKeywords_pre(finalResult) != finalResult || matchKeywords_post(finalResult) != finalResult ) {
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            String query=matchKeywords_pre(finalResult);
+                            query = matchKeywords_post(query);
+
+                            if(!query.trim().equals("")) {
+                                String resultJson = new TransApi().getTransResult(query, "auto", "en");
+                                //拿到结果，对结果进行解析。
+                                Gson gson = new Gson();
+                                TranslateResult translateResult = gson.fromJson(resultJson, TranslateResult.class);
+                                final List<TranslateResult.TransResultBean> trans_result = translateResult.getTrans_result();
+                                //这里注意：必须用handler，否则线程阻塞。
+                                mainHandler.post(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        String query=matchKeywords_pre(finalResult);
+                                        query = matchKeywords_post(query);
+                                        String dst = "";
+                                        for (TranslateResult.TransResultBean s : trans_result
+                                        ) {
+                                            dst = dst + "\n" + s.getDst();
+                                        }
+
+                                        speak(query+"的英文是" + dst);
+                                        information.setText(query+"\n"+dst.trim());
                                     }
-
-                                    speak(query+"的英文是" + dst);
-                                    information.setText(query+"\n"+dst.trim());
-                                }
-                            });
-                        }else{
-                            mainHandler.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    speak("你还没有告诉我你要查询的单词是什么哦！");
-                                    information.setText("再试一次吧！");
-                                }
-                            });
+                                });
+                            }else{
+                                mainHandler.post(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        speak("你还没有告诉我你要查询的单词是什么哦，再试一次吧！");
+                                        information.setText("你还没有告诉我你要查询的单词是什么哦，再试一次吧！");
+                                        tvAniamtion = new TextViewAnimation(information, "你还没有告诉我你要查询的单词是什么哦，再试一次吧！", 100);
+                                    }
+                                });
+                            }
                         }
-                    }
-                }).start();
-            }
-            else if(finalResult.contains("电话") && finalResult.contains("老师")){
-                // Restore preferences
-                SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-                phone = settings.getString("phone", "");
+                    }).start();
+                }
+                else if(finalResult.contains("电话") || finalResult.contains("老师")){
+                    // Restore preferences
+                    SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+                    phone = settings.getString("phone", "");
 
-                dialPhoneNumber(phone);
+                    dialPhoneNumber(phone);
+                }
+                else{
+                    speak("这个命令我还没有学会哦～");
+                    information.setText("这个命令我还没有学会哦～");
+                    tvAniamtion = new TextViewAnimation(information, "这个命令我还没有学会哦～", 100);
+                }
             }
-            else{
-                speak("这个命令我还没有学会哦～");
+            else
+            {
+                speak("抱歉，我还没有听清楚～请确保网络连通和麦克风权限开启哦！");
+                information.setText("抱歉，我还没有听清楚～请确保网络连通和麦克风权限开启哦！");
+                tvAniamtion = new TextViewAnimation(information, "抱歉，我还没有听清楚～请确保网络连通和麦克风权限开启哦！", 100);
             }
+            voice.setEnabled(true);
         }
     }
     //tvAniamtion = new TextViewAnimation(information, "呵呵测试一下？", 100);//字符动画！
@@ -570,6 +620,7 @@ public class MainActivity extends AppCompatActivity implements EventListener, Ph
             String[] results = recogResult.getResultsRecognition();
             information.setText(results[0]);
             finalResult = results[0];
+            recogDone = true;
 
         } else if (data != null) {
             logTxt += " ;data length=" + data.length;
