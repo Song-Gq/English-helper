@@ -72,10 +72,9 @@ import android.app.Dialog;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 
-import static android.support.design.widget.Snackbar.LENGTH_LONG;
 import static android.support.design.widget.Snackbar.LENGTH_SHORT;
 
-public class MainActivity extends AppCompatActivity implements EventListener, PhoneNumberDialog.PhoneDialogListener{
+public class MainActivity extends AppCompatActivity implements EventListener, PhoneNumberDialog.PhoneDialogListener {
     public static final String PREFS_NAME = "PrefsFile";
     private String phone = "";
 
@@ -371,7 +370,9 @@ public class MainActivity extends AppCompatActivity implements EventListener, Ph
                 Manifest.permission.WRITE_SETTINGS,
                 Manifest.permission.READ_PHONE_STATE,
                 Manifest.permission.ACCESS_WIFI_STATE,
-                Manifest.permission.CHANGE_WIFI_STATE
+                Manifest.permission.CHANGE_WIFI_STATE,
+                //麦克风权限
+                Manifest.permission.RECORD_AUDIO
         };
 
         ArrayList<String> toApplyList = new ArrayList<String>();
@@ -393,10 +394,8 @@ public class MainActivity extends AppCompatActivity implements EventListener, Ph
     private String matchKeywords_post(String str) {
         String[] keyword_array = this.getResources()
                 .getStringArray(R.array.keywords_post);
-        for(String s:keyword_array)
-        {
-            if(str.contains(s))
-            {
+        for (String s : keyword_array) {
+            if (str.contains(s)) {
                 return str.substring(0, str.indexOf(s));
             }
         }
@@ -407,28 +406,12 @@ public class MainActivity extends AppCompatActivity implements EventListener, Ph
     private String matchKeywords_pre(String str) {
         String[] keyword_array = this.getResources()
                 .getStringArray(R.array.keywords_pre);
-        for(String s:keyword_array)
-        {
-            if(str.contains(s))
-            {
+        for (String s : keyword_array) {
+            if (str.contains(s)) {
                 return str.substring(str.indexOf(s) + s.length());
             }
         }
         return str;
-    }
-
-    //检查是否存在打电话给老师的关键词
-    private boolean matchKeywords_call(String str) {
-        String[] keyword_array = this.getResources()
-                .getStringArray(R.array.keywords_call);
-        for(String s:keyword_array)
-        {
-            if(str.contains(s))
-            {
-                return true;
-            }
-        }
-        return false;
     }
 
     //按钮按下的监听函数
@@ -453,16 +436,15 @@ public class MainActivity extends AppCompatActivity implements EventListener, Ph
             voice.setBackgroundResource(R.drawable.speak);
             //这里添加识别判断执行相应操作！
 
-            if(recogDone)
-            {
-                if (matchKeywords_pre(finalResult) != finalResult || matchKeywords_post(finalResult) != finalResult ) {
+            if (recogDone) {
+                if (matchKeywords_pre(finalResult) != finalResult || matchKeywords_post(finalResult) != finalResult) {
                     new Thread(new Runnable() {
                         @Override
                         public void run() {
-                            String query=matchKeywords_pre(finalResult);
+                            String query = matchKeywords_pre(finalResult);
                             query = matchKeywords_post(query);
 
-                            if(!query.trim().equals("")) {
+                            if (!query.trim().equals("")) {
                                 String resultJson = new TransApi().getTransResult(query, "auto", "en");
                                 //拿到结果，对结果进行解析。
                                 Gson gson = new Gson();
@@ -472,7 +454,7 @@ public class MainActivity extends AppCompatActivity implements EventListener, Ph
                                 mainHandler.post(new Runnable() {
                                     @Override
                                     public void run() {
-                                        String query=matchKeywords_pre(finalResult);
+                                        String query = matchKeywords_pre(finalResult);
                                         query = matchKeywords_post(query);
                                         String dst = "";
                                         for (TranslateResult.TransResultBean s : trans_result
@@ -480,11 +462,11 @@ public class MainActivity extends AppCompatActivity implements EventListener, Ph
                                             dst = dst + "\n" + s.getDst();
                                         }
 
-                                        speak(query+"的英文是" + dst);
-                                        information.setText(query+"\n"+dst.trim());
+                                        speak(query + "的英文是" + dst);
+                                        information.setText(query + "\n" + dst.trim());
                                     }
                                 });
-                            }else{
+                            } else {
                                 mainHandler.post(new Runnable() {
                                     @Override
                                     public void run() {
@@ -496,20 +478,17 @@ public class MainActivity extends AppCompatActivity implements EventListener, Ph
                             }
                         }
                     }).start();
-                }
-                else if(matchKeywords_call(finalResult)){
+                } else if (finalResult.contains("电话") || finalResult.contains("老师")) {
                     // Restore preferences
                     SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
                     phone = settings.getString("phone", "");
 
                     dialPhoneNumber(phone);
-                }
-                else if(finalResult.contains("词") ){
+                } else if (finalResult.contains("词")) {
                     String word = getRandomWord();
                     String word_only = word.substring(0, word.indexOf(" "));
                     speak(word_only);
-                    tvAniamtion = new TextViewAnimation(information,
-                            word_only + "\n" + word.substring(word.indexOf(" ") + 1), 100);
+                    tvAniamtion = new TextViewAnimation(information, word, 100);
 
                     //将内容复制到剪贴板
                     ClipboardManager cm = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
@@ -517,17 +496,14 @@ public class MainActivity extends AppCompatActivity implements EventListener, Ph
 
                     //弹出提示
                     Snackbar copySnackbar = Snackbar.make(findViewById(R.id.messageCoordinatorLayout),
-                            R.string.popup_message_copy, LENGTH_LONG);
+                            R.string.popup_message_copy, LENGTH_SHORT);
                     copySnackbar.show();
-                }
-                else{
+                } else {
                     speak("这个命令我还没有学会哦～");
                     //information.setText("这个命令我还没有学会哦～");
                     tvAniamtion = new TextViewAnimation(information, "这个命令我还没有学会哦～", 100);
                 }
-            }
-            else
-            {
+            } else {
                 speak("抱歉，我还没有听清楚～请确保网络连通和麦克风权限开启哦！");
                 //information.setText("抱歉，我还没有听清楚～请确保网络连通和麦克风权限开启哦！");
                 tvAniamtion = new TextViewAnimation(information, "抱歉，我还没有听清楚～请确保网络连通和麦克风权限开启哦！", 100);
@@ -556,7 +532,7 @@ public class MainActivity extends AppCompatActivity implements EventListener, Ph
     }
 
     //设置按钮弹出设置窗口
-    public void settingDialog (View view) {
+    public void settingDialog(View view) {
         DialogFragment newFragment = new PhoneNumberDialog();
         newFragment.show(getSupportFragmentManager(), "settings");
     }
