@@ -53,8 +53,8 @@
         <item>讲讲看</item>
         <item>说说</item>
         <item>讲讲</item>
-        <item>说</item>
-        <item>讲</item>
+        <!--<item>说</item>-->
+        <!--<item>讲</item>-->
         <item>查询</item>
         <item>知道</item>
         <item>搜索</item>
@@ -79,6 +79,19 @@
         <item>找</item>
         <item>查</item>
         <item>搜</item>
+    </string-array>
+    <string-array name="keywords_call">
+        <item>电话</item>
+        <item>打给</item>
+        <item>老师</item>
+        <item>教师</item>
+        <item>教授</item>
+        <item>导师</item>
+        <item>老板</item>
+        <item>讲师</item>
+        <item>呼叫</item>
+        <item>拨打</item>
+        <item>拨叫</item>
     </string-array>
     <string-array name="vocabulary">
         <item>abandon vt. 放弃 放任</item>

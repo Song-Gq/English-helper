@@ -72,6 +72,7 @@ import android.app.Dialog;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 
+import static android.support.design.widget.Snackbar.LENGTH_LONG;
 import static android.support.design.widget.Snackbar.LENGTH_SHORT;
 
 public class MainActivity extends AppCompatActivity implements EventListener, PhoneNumberDialog.PhoneDialogListener{
@@ -416,6 +417,20 @@ public class MainActivity extends AppCompatActivity implements EventListener, Ph
         return str;
     }
 
+    //检查是否存在打电话给老师的关键词
+    private boolean matchKeywords_call(String str) {
+        String[] keyword_array = this.getResources()
+                .getStringArray(R.array.keywords_call);
+        for(String s:keyword_array)
+        {
+            if(str.contains(s))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
     //按钮按下的监听函数
     public void voiceRecognition(View view) {
         //speak("");
@@ -482,7 +497,7 @@ public class MainActivity extends AppCompatActivity implements EventListener, Ph
                         }
                     }).start();
                 }
-                else if(finalResult.contains("电话") || finalResult.contains("老师")){
+                else if(matchKeywords_call(finalResult)){
                     // Restore preferences
                     SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
                     phone = settings.getString("phone", "");
@@ -493,7 +508,8 @@ public class MainActivity extends AppCompatActivity implements EventListener, Ph
                     String word = getRandomWord();
                     String word_only = word.substring(0, word.indexOf(" "));
                     speak(word_only);
-                    tvAniamtion = new TextViewAnimation(information, word, 100);
+                    tvAniamtion = new TextViewAnimation(information,
+                            word_only + "\n" + word.substring(word.indexOf(" ") + 1), 100);
 
                     //将内容复制到剪贴板
                     ClipboardManager cm = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
@@ -501,7 +517,7 @@ public class MainActivity extends AppCompatActivity implements EventListener, Ph
 
                     //弹出提示
                     Snackbar copySnackbar = Snackbar.make(findViewById(R.id.messageCoordinatorLayout),
-                            R.string.popup_message_copy, LENGTH_SHORT);
+                            R.string.popup_message_copy, LENGTH_LONG);
                     copySnackbar.show();
                 }
                 else{
