@@ -3,17 +3,25 @@
     <!-- 欢迎语 -->
     <string-array name="welcome_tips">
         <item>欢迎使用English Helper，快点击下方话筒来调戏我吧～</item>
-        <item>欢迎使用English Helper，说说看我想查询+中文来向我提问吧！</item>
-        <item>欢迎使用English Helper，可以跟我说打电话给老师向老师求助哦！</item>
-        <item>欢迎使用English Helper，说说看每日一词来学习一个新单词吧！</item>
+        <item>欢迎使用English Helper，说说看“我想查询+中文”来向我提问吧！</item>
+        <item>欢迎使用English Helper，可以跟我说“打电话给老师”向老师求助哦！</item>
+        <item>欢迎使用English Helper，说说看“每日一词”来学习一个新单词吧！</item>
         <item>欢迎使用English Helper，今天你英语进步了吗？</item>
     </string-array>
-    <string name="setting_title">请在此填写老师的电话号码</string>
+    <string name="dialog_title">帮助和设置</string>
     <string name="setting_confirm_button">保存</string>
     <string name="setting_text_field">电话</string>
     <string name="background_description">background image</string>
     <string name="help_button_description">help and settings</string>
     <string name="speak_button_description">tap and speak</string>
+    <string name="popup_message_positive">号码已保存</string>
+    <string name="popup_message_negative">号码未更改</string>
+    <string name="setting_title">请在下方填写老师的电话号码哦</string>
+    <string name="help_1">可以试着对我说：</string>
+    <string name="help_2">“我想知道苹果的英文是什么”</string>
+    <string name="help_3">“请帮我打电话给老师求助”</string>
+    <string name="help_4">“每日一词”</string>
+    <string name="popup_message_copy">单词已复制到剪贴板</string>
     <string-array name="keywords_post">
         <item>的英语</item>
         <item>的英文</item>
@@ -23,6 +31,8 @@
         <item>的意思</item>
         <item>用英语</item>
         <item>用英文</item>
+        <item>怎么表达</item>
+        <item>如何表达</item>
         <item>怎么说</item>
         <item>怎么讲</item>
         <item>的讲法</item>
@@ -31,6 +41,20 @@
         <item>是啥</item>
     </string-array>
     <string-array name="keywords_pre">
+        <item>查询一下</item>
+        <item>搜索一下</item>
+        <item>查找一下</item>
+        <item>搜寻一下</item>
+        <item>了解一下</item>
+        <item>理解一下</item>
+        <item>说一下</item>
+        <item>讲一下</item>
+        <item>说说看</item>
+        <item>讲讲看</item>
+        <item>说说</item>
+        <item>讲讲</item>
+        <item>说</item>
+        <item>讲</item>
         <item>查询</item>
         <item>知道</item>
         <item>搜索</item>
@@ -38,10 +62,14 @@
         <item>搜寻</item>
         <item>了解</item>
         <item>理解</item>
+        <item>明白</item>
+        <item>清楚</item>
         <item>搜搜</item>
         <item>找找</item>
         <item>查查</item>
-        <item>找找</item>
+        <item>翻译翻译</item>
+        <item>翻译一下</item>
+        <item>翻译</item>
         <item>找一下</item>
         <item>查一下</item>
         <item>搜一下</item>
@@ -51,6 +79,922 @@
         <item>找</item>
         <item>查</item>
         <item>搜</item>
+    </string-array>
+    <string-array name="vocabulary">
+        <item>abandon vt. 放弃 放任</item>
+        <item>abase v. 贬低降低地位、威望或尊严</item>
+        <item>abash vt. 使不安，使羞愧</item>
+        <item>abate v. 减轻，减低</item>
+        <item>abbreviate v. 缩写, 缩短,^</item>
+        <item>abdicate v. 让位，放弃</item>
+        <item>aberrant adj.异常的，非常规的</item>
+        <item>abet v. 帮助或支持</item>
+        <item>abeyance n.中止 ，暂停，搁置</item>
+        <item>abhor vt.憎恶, 痛恨</item>
+        <item>abiding adj. 永久的，持久的</item>
+        <item>abject adj. 卑微的;精神不振的</item>
+        <item>abjure v. 发誓放弃</item>
+        <item>abnegation v. 放弃，自我牺牲</item>
+        <item>abolition n.废除，废除奴隶制</item>
+        <item>abominate v. 憎恶</item>
+        <item>aboveboard adj. 无欺诈的adv. 直率地，光明磊落地</item>
+        <item>abrade v. 磨损</item>
+        <item>abridge v. 删减 ，缩短</item>
+        <item>abrogate v. 废除;取消</item>
+        <item>abscission v. 切断</item>
+        <item>abscond v. 潜逃</item>
+        <item>absolute v. 绝对的，无限制的</item>
+        <item>absolve v. 赦免;使无罪</item>
+        <item>abstain v. 主动戒绝 ，自我抑制</item>
+        <item>abstemious adj. 有节制的</item>
+        <item>abstract vt. 1. 摘要, 提炼, 抽象化 2. 心不在焉</item>
+        <item>abstruse adj. 深奥的</item>
+        <item>abuse v. 辱骂，毁谤</item>
+        <item>abut vi. 毗邻</item>
+        <item>abysmal adj. 深不可测的, 无底的</item>
+        <item>accede v. 同意</item>
+        <item>accelerate v. 加速，促进</item>
+        <item>accessible adj. 易接近的 ，可理解的</item>
+        <item>accessory adj.附属的</item>
+        <item>accidental adj. 意外的,偶然的</item>
+        <item>acclimate vt. 使适应气候环境</item>
+        <item>accolade n. 推崇备至，赞扬</item>
+        <item>accommodate v. 提供方便大胆靠近</item>
+        <item>accretion v. 逐渐增长</item>
+        <item>accumulate vi. 积聚 ,堆积</item>
+        <item>acerbic adj.酸的</item>
+        <item>achromatic adj.非彩色的, 无色的</item>
+        <item>acme n.顶点，极点</item>
+        <item>acquiesce v. 勉强同意;默许</item>
+        <item>acquisition n. 获得</item>
+        <item>acre n.英亩</item>
+        <item>acrid adj. 辛辣的，刺鼻的</item>
+        <item>acrimonious adj. 刻薄的</item>
+        <item>acumen n.敏锐, 聪明</item>
+        <item>acute adj. 敏锐的，锐角的;急性的</item>
+        <item>adage n. 谚语</item>
+        <item>adamant adj. 固执的，不动摇的</item>
+        <item>adapt vt. 修改，使适应</item>
+        <item>addendum n. 附录</item>
+        <item>addict v. 沉溺, 上瘾</item>
+        <item>adhere v.依附，粘着</item>
+        <item>adjourn vi. 延期,休会</item>
+        <item>adjunct n. 附属物，附件</item>
+        <item>ad-lib adj. 即兴的</item>
+        <item>admission n. 许可入场，录取</item>
+        <item>admonish v. 告诫，责备</item>
+        <item>adore vt. 崇拜，热爱</item>
+        <item>adulate v. 谄媚，奉承</item>
+        <item>adulterate vt. 掺假</item>
+        <item>adumbrate vt. 隐约预示</item>
+        <item>adversary n. 敌手,对手</item>
+        <item>advert vi. 注意, 留意 n. 广告</item>
+        <item>advertise vt. 广告</item>
+        <item>advocate vt. 主张,提倡</item>
+        <item>aerate v. 充气</item>
+        <item>aesthetic n. 美学</item>
+        <item>affable adj.易于交谈的，和蔼的</item>
+        <item>affected adj. 假装的, 做作的</item>
+        <item>affection n. 爱,情感</item>
+        <item>affidavit n. 宣过誓的书面陈述</item>
+        <item>affiliate v. 使成为会员，结盟</item>
+        <item>affinity n. 天然倾向或喜好</item>
+        <item>affluent adj.丰富的, 富裕的</item>
+        <item>agenda n. 议程</item>
+        <item>aggrandize vt. 增加,夸大</item>
+        <item>aggravate vt. 加重，恶化</item>
+        <item>aggregate n. 集合体 v. 集合，合计</item>
+        <item>babble vt.胡说八道</item>
+        <item>backhanded adj. 间接的，含沙射影的</item>
+        <item>bacteria n.细菌，培养基</item>
+        <item>badge n.徽章标志</item>
+        <item>badger vt. 不断纠缠</item>
+        <item>badinage n. 打趣，揶揄</item>
+        <item>bait v. 折磨</item>
+        <item>balance n. 天平，秤 v. 平衡, 称, 权衡, 对比, 结算</item>
+        <item>bale v. 极恶痛苦，悲哀</item>
+        <item>baleful adj. 邪恶的，有害的</item>
+        <item>balk vt. 阻止不肯前行，退缩</item>
+        <item>balky adj. 不肯前行的，倔强的</item>
+        <item>ballad n.民歌抒情民谣</item>
+        <item>ballast n.压舱物</item>
+        <item>ballet n. 芭蕾舞</item>
+        <item>balloon v. 膨胀迅速增加</item>
+        <item>balm n.香膏安慰剂</item>
+        <item>banal adj.平凡的, 陈腐的</item>
+        <item>bane n.祸根</item>
+        <item>banish vt. 驱逐</item>
+        <item>banister n. 栏杆的支柱,楼梯的扶栏</item>
+        <item>banquet n. 盛宴</item>
+        <item>banter v. 善意的玩笑</item>
+        <item>barb n. 尖锐而严厉的批评</item>
+        <item>barbarous adj.野蛮的, 残暴的, 粗野的</item>
+        <item>barefaced adj. 公然的，无耻的</item>
+        <item>bargain v. 讨价还价</item>
+        <item>baroque adj.高度装饰的，过份雕琢的</item>
+        <item>barrage v. 枪弹齐发</item>
+        <item>barren adj.不育的, 贫瘠的</item>
+        <item>barricade v. 阻碍</item>
+        <item>barter n. 物物交换</item>
+        <item>base adj. 卑鄙的,低级的</item>
+        <item>baseboard n. 护壁板,脚板</item>
+        <item>bathetic adj. 平凡的,陈腐的</item>
+        <item>bawdy adj.猥亵的</item>
+        <item>cabal n. 阴谋小集团</item>
+        <item>cache n.隐藏处所</item>
+        <item>cacophony n. 刺耳的声音</item>
+        <item>cadge v.行乞，乞求</item>
+        <item>cajole v.哄骗</item>
+        <item>calcify vi.钙化</item>
+        <item>calibrate vt. 测量,校准</item>
+        <item>calligraphy n. 书法</item>
+        <item>callous adj.无情的, 冷漠的</item>
+        <item>callow adj.未成熟的</item>
+        <item>callus n. 皮肤的硬结，老茧</item>
+        <item>calorie n. 卡路里，热量单位</item>
+        <item>calumniate v. 诽谤，中伤</item>
+        <item>camaraderie n. 友情</item>
+        <item>cameo n. 小雕塑，特写</item>
+        <item>camouflage n. 伪装</item>
+        <item>candor n. 坦白，直率，诚挚</item>
+        <item>canon n. 圣典</item>
+        <item>canopy n.蚊帐, 遮篷</item>
+        <item>canvas n. 帆布,画布</item>
+        <item>canvass v. 细查,游说，拉票</item>
+        <item>canyon n. 峡谷</item>
+        <item>capitulate v. 投降 不再抵制</item>
+        <item>caprice n.反复无常，善变</item>
+        <item>captivate vt.着迷</item>
+        <item>careworn adj. 伤心的</item>
+        <item>caret n. 插字符号^</item>
+        <item>cardinal adj. 主要的</item>
+        <item>caricature n.漫画，滑稽模仿</item>
+        <item>carnal adj.肉体的，物质的</item>
+        <item>carouse vi.畅饮，狂欢作乐</item>
+        <item>carp n.鲤鱼 vi. 吹毛求疵,挑剔</item>
+        <item>cartographer n. 地图绘制者</item>
+        <item>carve v . 切雕刻</item>
+        <item>cast n. 演员，演员阵容 vt. 选派</item>
+        <item>castigate v.强烈反对，苛责</item>
+        <item>catalyze vt. 促进，催化</item>
+        <item>catastrophe n. 大灾难</item>
+        <item>categorical adj. 无条件的，绝对的</item>
+        <item>catholic adj.普遍的包容的</item>
+        <item>caustic adj.腐蚀性的，刻薄的</item>
+        <item>caveat n.警告; 告诫</item>
+        <item>cavern n. 大洞,洞窟</item>
+        <item>cavil v.挑剔，吹毛求疵</item>
+        <item>cavort vi. 欢跃</item>
+        <item>cede vt. 放弃</item>
+        <item>celebrity n. 名人</item>
+        <item>cement n.水泥 v. 巩固</item>
+        <item>censor vt.审查</item>
+        <item>censorious adj. 挑剔的</item>
+        <item>censure v. 责难，谴责</item>
+        <item>census n. 户口普查</item>
+        <item>cessation n. 终止，暂停</item>
+        <item>chaff n. 谷壳，糠</item>
+        <item>chagrin n . 懊恼</item>
+        <item>dabbler vi. 涉猎者，浅尝辙止者</item>
+        <item>daft adj. 傻的，愚蠢的</item>
+        <item>daguerreotype n.早期银板照相法</item>
+        <item>dally vi. 闲逛，虚度时光</item>
+        <item>damper n.抑制因素，泼冷水</item>
+        <item>dandy n.纨绔子弟，好打扮的人</item>
+        <item>dank adj. 阴湿的</item>
+        <item>dapper adj. 衣冠楚楚的;干净的</item>
+        <item>dappled adj. 有斑点的,花的</item>
+        <item>daredevil n. 大胆的人，鲁莽的人</item>
+        <item>dart vi. 疾驰，飞奔 n. 标枪</item>
+        <item>daunt vt. 使胆怯，使畏缩</item>
+        <item>dawdle v.n. 游手好闲，虚度光阴</item>
+        <item>deadpan adj.无表情的，冷漠的</item>
+        <item>dearth n. 缺乏，粮食不足，饥谨</item>
+        <item>debacle n.崩溃，溃败</item>
+        <item>debark vt.使下船登陆, 卸载</item>
+        <item>debase v.贬低，贬损</item>
+        <item>debilitate vt. 使衰弱</item>
+        <item>debris n.碎片，残骸</item>
+        <item>debunk v. 揭穿真面目，暴露</item>
+        <item>debut n.初次登场亮相</item>
+        <item>decadence n. 衰落，颓废</item>
+        <item>decant vt. 轻轻倒出</item>
+        <item>decibel n. 分贝</item>
+        <item>decipher vt.破解，解释</item>
+        <item>decode vt. 解码，译解</item>
+        <item>decorum n.礼仪</item>
+        <item>decrepit adj. 衰老的，破旧的</item>
+        <item>default n. v. 拖欠</item>
+        <item>defer v.推迟，延期，听从</item>
+        <item>deference n. 敬意，尊重</item>
+        <item>eaglet n.小鹰;小雕</item>
+        <item>earnest adj.认真的;诚恳的</item>
+        <item>earplug n.耳塞</item>
+        <item>earshot n.听力所及的范围</item>
+        <item>earsplitting adj.震耳欲聋的</item>
+        <item>easel n. 画架</item>
+        <item>eavesdrop v.偷听</item>
+        <item>ebullient adj.热情奔放的</item>
+        <item>eccentric adj.古怪的n.行为古怪者</item>
+        <item>eclat n.辉煌成就</item>
+        <item>eclipse n.v.日月蚀;使黯然失色</item>
+        <item>ecstasy n.v.狂喜</item>
+        <item>ecumenical adj.世界范围的;一般性的; 特指 世界范围基督教的</item>
+        <item>eddy n.v.漩涡</item>
+        <item>edible adj.可食用的</item>
+        <item>edifice n.大厦;大建筑物</item>
+        <item>efface v.擦掉;抹去;磨灭</item>
+        <item>effervesce vi.冒泡bubble欢腾</item>
+        <item>effete adj.衰老的;疲惫的</item>
+        <item>effluvium n. 臭气;没用的副产品</item>
+        <item>effulgence adj.光辉，灿烂</item>
+        <item>effusive adj.感情横溢的;喷发的</item>
+        <item>egalitarian n.adj.平等主义</item>
+        <item>egoism n. 利己主义</item>
+        <item>elaborate v.详述 adj.精细的;详尽的</item>
+        <item>elastic adj.有弹性的;能伸展的</item>
+        <item>elate adj.兴高采烈的 v.使兴奋</item>
+        <item>elbow n.肘</item>
+        <item>eleemosynary adj.施舍的;慈善的</item>
+        <item>elegy n.哀歌;挽歌</item>
+        <item>elephantine adj. 象的;巨大的</item>
+        <item>elevate v.举起;提升;振奋</item>
+        <item>elicit vt.引出;引起</item>
+        <item>ellipsis n.省略;省略号</item>
+        <item>elliptical adj.椭圆的;省略的;朦胧含糊的</item>
+        <item>elucidate v. 阐明;说明</item>
+        <item>emaciate v .使憔悴;减肥</item>
+        <item>emancipate v.解放</item>
+        <item>embargo n.禁运令;封港令</item>
+        <item>embark vi.上船;开始从事</item>
+        <item>embarrass vt.使困窘;妨碍</item>
+        <item>embed vt. 嵌入，放入</item>
+        <item>embezzle vt.盗用;挪用</item>
+        <item>embolden v.壮胆;鼓励</item>
+        <item>emboss vt.饰以浮饰;使凸出来;浮雕装饰</item>
+        <item>embrace n.v.拥抱;乐于接受</item>
+        <item>embroider v.刺绣</item>
+        <item>emigrate v.移居;移民</item>
+        <item>eminence n.显赫地位;出众</item>
+        <item>emollient adj.使柔软的n. 润滑剂，安慰剂</item>
+        <item>emulate vt.努力赶上;仿效</item>
+        <item>enact vt.制定颁布法律</item>
+        <item>enamel n.珐琅;瓷釉;搪瓷</item>
+        <item>encomium n.高度赞扬</item>
+        <item>fable n.寓言</item>
+        <item>fabricate vt.制造;捏造 build; lie</item>
+        <item>facetious adj.轻浮的;好开玩笑的</item>
+        <item>facilitate vt.帮助;使容易;促进</item>
+        <item>faction n.派别;派系斗争</item>
+        <item>fallacy n.谬论</item>
+        <item>fallow adj.休耕的;闲置的</item>
+        <item>fail-safe n.自动防故障装置</item>
+        <item>falsehood n.谎言;虚假</item>
+        <item>falter n.v. 蹒跚;颤抖;动摇</item>
+        <item>fanatic n.狂热者;盲信者 adj.狂热的;盲信的</item>
+        <item>fang n.犬牙;毒牙</item>
+        <item>fantasy n.v.幻想</item>
+        <item>farce n.闹剧</item>
+        <item>fascinate vt.强烈吸引;使着迷</item>
+        <item>fast n.绝食;斋戒 adv.快地;稳固地</item>
+        <item>fastidious adj.难取悦的;挑剔的</item>
+        <item>fateful adj.命中注定的;重大的;致命性的</item>
+        <item>fathom v. 理解，调查，测量</item>
+        <item>fatigue n.v. 疲惫 adj.疲惫的</item>
+        <item>fatuous adj.愚昧的;痴呆的;虚幻的</item>
+        <item>faultfinder n.找岔,喜欢挑剔的人</item>
+        <item>fawn n.未满周岁的小鹿;巴结 v.阿谀奉承 adj.奉承的</item>
+        <item>faze vt.打扰,折磨,使狼狈</item>
+        <item>feckless adj.无效的;无力气的</item>
+        <item>fecund adj.多产的;丰饶的;肥沃的</item>
+        <item>feeble adj. 衰弱的;无效的</item>
+        <item>feigned adj.假装的</item>
+        <item>fender n.挡泥板;防御物</item>
+        <item>feral adj.野生的;凶猛的</item>
+        <item>ferrous adj.铁的;含铁的</item>
+        <item>fertilize vt.施肥;使丰饶;使受精</item>
+        <item>fervid adj.热情的</item>
+        <item>fervor n.热情</item>
+        <item>fester n.脓疮 v.溃烂;化脓;烦恼</item>
+        <item>fetid adj.有恶臭的</item>
+        <item>fetter n.脚镣 v.束缚</item>
+        <item>fiasco n.大失败;惨败</item>
+        <item>gadfly n.牛虻;讨厌的人</item>
+        <item>gadget n.小玩意</item>
+        <item>gaffe n.社交上失言;失态</item>
+        <item>gainsay v.否认</item>
+        <item>gait n.步态;步法</item>
+        <item>galaxy n.银河;星系</item>
+        <item>gall n.v.烦恼;焦躁;难堪</item>
+        <item>gallant adj.华丽的;英勇的</item>
+        <item>galley n.船上厨房</item>
+        <item>galvanize v. 电镀;激励</item>
+        <item>gamble v.赌博;孤注一掷</item>
+        <item>gambol n.vi.欢跳;雀跃</item>
+        <item>gangly adj.身材瘦长的</item>
+        <item>gangway n.过道;通路;跳板</item>
+        <item>garble v.曲解;篡改;混淆</item>
+        <item>gargantuan adj.巨大的</item>
+        <item>garish adj.俗丽的;过分装饰的</item>
+        <item>garment n.衣服;外观</item>
+        <item>garrulous adj.唠叨的;啰嗦的</item>
+        <item>gash n.砍得很深的伤口;很深的裂缝</item>
+        <item>gasification n.气化</item>
+        <item>gauche adj.笨拙的;粗鲁无礼的;缺乏社交经验的</item>
+        <item>gaudy adj.俗丽的</item>
+        <item>gauge n.度量规格;测量器具 vt.度量;估计</item>
+        <item>gear n.齿轮;工具</item>
+        <item>genial adj.和蔼的;亲切的</item>
+        <item>genteel adj.上流社会有教养的;文雅的;时髦的</item>
+        <item>germane adj. 有密切关系的</item>
+        <item>gerrymander vt. 不公正划分选区</item>
+        <item>geyser n. 间歇泉;燃气热水器</item>
+        <item>gibe v. 嘲笑，奚落</item>
+        <item>giddy adj. 轻率的</item>
+        <item>girder n. 大梁</item>
+        <item>gist n.要点, 要旨</item>
+        <item>glacier n.冰川</item>
+        <item>glade n.林间空地</item>
+        <item>gladiator n.角斗士</item>
+        <item>habitable adj. 可居住的</item>
+        <item>hack n.雇佣文人v.切割</item>
+        <item>hackneyed adj.平凡的;陈腐的</item>
+        <item>halcyon adj. 宁静的</item>
+        <item>hale adj. 强壮的,健壮的</item>
+        <item>half-baked adj.考虑不成熟的</item>
+        <item>hallmark n. 典型的特征</item>
+        <item>hallow vt.视为神圣</item>
+        <item>hallucination n. 幻觉,幻想</item>
+        <item>halting adj. 蹒跚的,犹豫的</item>
+        <item>ham-handed adj. 笨手笨脚的</item>
+        <item>hammer n. 铁锤, 槌</item>
+        <item>hamper vt.阻碍n.有盖的大篮子</item>
+        <item>hamstring vt. 使残废，使无效</item>
+        <item>hangdog adj. 忧愁的，悲哀的，沮丧的;低贱的</item>
+        <item>hankering n. 渴望</item>
+        <item>haphazard n.,adj. adv.偶然的</item>
+        <item>hapless adj.不幸的，运气不好的</item>
+        <item>harangue v. 长篇大论</item>
+        <item>harass v.烦扰</item>
+        <item>harbinger n. 先驱,预兆</item>
+        <item>harbor n. 港，避难所v. 包庇，隐匿</item>
+        <item>hard-bitten adj. 顽强的，坚韧不拔的，不屈的</item>
+        <item>hardy adj. 勇敢的，鲁莽的;强健的</item>
+        <item>harmonious adj. 和睦的，和谐的</item>
+        <item>harness n.马具 v.利用</item>
+        <item>harp n. 竖琴</item>
+        <item>harrow vt.折磨, 使苦恼</item>
+        <item>harry v. 掠夺，骚扰</item>
+        <item>harsh adj. 粗糙的;刺耳的;严厉的</item>
+        <item>hasten vt.促进 vi.赶紧</item>
+        <item>hasty adj. 匆匆的，急忙的;轻率的</item>
+        <item>hatch n.舱口，舱口盖，开口</item>
+        <item>ichthyologist n. 鱼类学者,鱼类研究者</item>
+        <item>iconoclast n.偶像破坏者，打破旧习的人</item>
+        <item>idolatrize v.奉为偶像，盲目崇拜</item>
+        <item>idyll n.田园诗，牧歌;田园生活</item>
+        <item>ignite v. 点燃，使灼热;使兴奋</item>
+        <item>ignominy n. 耻辱</item>
+        <item>illiteracy n. 文盲</item>
+        <item>illuminati n. 有睿智的人</item>
+        <item>illumination n. 照明;阐明;启发;装饰图案</item>
+        <item>illusory adj. 产生幻觉的，幻影的，幻想</item>
+        <item>imbibe v. 象喝一样地吸收或吸进</item>
+        <item>imbroglio n. 纷乱，纠葛，纷扰，一团糟</item>
+        <item>imitation n. 模仿，效法;冒充，赝品</item>
+        <item>immaculate adj纯净的</item>
+        <item>immanent adj. 普遍存在的，内在的</item>
+        <item>immaterial adj. 非物质的,无形的,精神的</item>
+        <item>immature adj. 不成熟的, 未完全发展的</item>
+        <item>immemorial adj. 古老的</item>
+        <item>immune adj. 免疫的,免除的,不受影响的</item>
+        <item>immure v. 监禁，禁闭</item>
+        <item>immutable adj. 不可变的</item>
+        <item>imp n. 顽童</item>
+        <item>impassive adj. 冷漠的,无感情的 ,平静的</item>
+        <item>impeccable a.没缺点的，正直的</item>
+        <item>impecunious adj. 不名一文的，贫困的</item>
+        <item>impede v. 妨碍，阻碍</item>
+        <item>impend vi. 即将发生</item>
+        <item>impenetrable adj. 难以渗透的</item>
+        <item>impenitent adj. 不悔悟的</item>
+        <item>imperative adj. 命令式的,急需的,势在必行的,强制的</item>
+        <item>imperial adj. 帝王的，至尊的;壮丽的，堂皇的</item>
+        <item>imperious adj. 傲慢的，专横的</item>
+        <item>impertinent adj. 鲁莽的;不恰当的</item>
+        <item>imperturbable adj. 冷静沉着的，镇静的</item>
+        <item>impervious adj. 密封的;不会被损害的</item>
+        <item>impetuous adj. 冲动的，急躁的</item>
+        <item>impiety n. 无信仰，不虔诚</item>
+        <item>implacable adj. 不易抚慰的</item>
+        <item>implement n. 工具，器具v. 实现，使生效，执行</item>
+        <item>implode v. 内爆</item>
+        <item>imposing adj. 使难忘的;壮丽的</item>
+        <item>impostor n. 冒名顶替者</item>
+        <item>impotent a. 无力的，虚弱的，无效的</item>
+        <item>imprecise adj. 不严密的，不精确的</item>
+        <item>impresario n.经理人</item>
+        <item>impromptu adj. 即席的，即兴的</item>
+        <item>improvise v. 即兴而作</item>
+        <item>imprudent adj. 轻率的，鲁莽的</item>
+        <item>impudent adj. 放肆无礼的，厚颜无耻的</item>
+        <item>impugn v. 指责，对…表示怀疑</item>
+        <item>impuissance n. 无权;无力;虚弱</item>
+        <item>inadvertent adj. 不注意的，疏忽的</item>
+        <item>inalienable adj.不能让与的,不能交出的</item>
+        <item>jabber v. 快而不清楚地说</item>
+        <item>jaded adj.疲惫的，过度的</item>
+        <item>jape n/v. 嘲弄</item>
+        <item>jargon n.行话</item>
+        <item>jarring adj.刺耳的</item>
+        <item>jaundice vt. 使怀偏见</item>
+        <item>jaunty adj.愉快的，满足的</item>
+        <item>jejune adj. 空洞的，不成熟的</item>
+        <item>jest n. v. 说笑，玩笑</item>
+        <item>jeopardy n. 危险</item>
+        <item>jettison vt. 丢弃</item>
+        <item>jibe vi. 嘲笑,一致</item>
+        <item>jingoist n. 沙文主义者</item>
+        <item>jitter vi. 神经过敏,战战兢兢</item>
+        <item>jocular adj. 诙谐的</item>
+        <item>jocund adj. 快乐的，高兴的</item>
+        <item>jog n. 轻推,轻撞,漫步</item>
+        <item>jolt vi. 颠簸而行,震摇</item>
+        <item>jot vt. 略记,摘要</item>
+        <item>jovial adj.快活</item>
+        <item>jubilant adj.喜悦的,喜洋洋的</item>
+        <item>judicious adj. 明智的，慎重的</item>
+        <item>juggernaut n.势不可挡的力量</item>
+        <item>kangaroo n. 袋鼠</item>
+        <item>ken n. 视野范围</item>
+        <item>kidnap vt.诱拐,绑架,勒索</item>
+        <item>kindle vt.点燃 vi.着火</item>
+        <item>kindred adj. 同族的, 类似的</item>
+        <item>knack n. 诀窍</item>
+        <item>knave n.流氓</item>
+        <item>knead vt. 揉捏</item>
+        <item>knit v.编织</item>
+        <item>knotty adj. 多节的,棘手的</item>
+        <item>kudos n.名望, 荣誉, 声誉</item>
+        <item>labile adj. 易变的,不稳定的</item>
+        <item>labored adj. 表达困难的</item>
+        <item>labyrinth n. 迷宫,难解的事物</item>
+        <item>lackluster n.无光泽, 暗淡</item>
+        <item>laconic adj.简洁的</item>
+        <item>lachrymose adj. 爱哭的, 悲哀的</item>
+        <item>lambaste vt. 痛打，严责</item>
+        <item>lamentable adj. 忧郁的，不快的</item>
+        <item>lampoon n n.讽刺文章v.讽刺</item>
+        <item>landfill ` n. 垃圾堆</item>
+        <item>languid adj.没精打采的,怠倦的</item>
+        <item>languish v.衰弱，变得消瘦</item>
+        <item>languor n. 衰弱无力</item>
+        <item>lank adj. 瘦削的，稀疏的</item>
+        <item>lapse n. 过失,流逝,失效</item>
+        <item>larder n. 食物贮藏室,食品橱</item>
+        <item>largesse n.慷慨</item>
+        <item>lariat n.套索</item>
+        <item>lash v. 捆扎，绑紧</item>
+        <item>lassitude n.疲乏无力，没精打采</item>
+        <item>latent adj. 潜伏的,潜在的</item>
+        <item>lathe n. 车床</item>
+        <item>latitude n.行动或言论的自由</item>
+        <item>laudatory adj. 赞美的,赞赏的</item>
+        <item>lavish adj. 浪费的，过度的v.浪费</item>
+        <item>leaven vt. 使发酵,影响</item>
+        <item>leer vi. 斜视，一瞥</item>
+        <item>leery adj.可疑的，怀疑的;机警的</item>
+        <item>legacy [i] n.遗产</item>
+        <item>legend n. 传奇，图例</item>
+        <item>legion n. 兵团;众多，大量</item>
+        <item>lenient adj. 不苛刻的仁慈的,宽厚的</item>
+        <item>lethal adj. 致命的</item>
+        <item>macabre adj.恐怖的以死亡为主题的</item>
+        <item>macerate v. 浸软</item>
+        <item>maculate adj. 有斑点的</item>
+        <item>maelstrom n.大漩涡,灾祸</item>
+        <item>magnificent adj.高尚的,宏伟的</item>
+        <item>maladroit adj. 笨拙的</item>
+        <item>malaise n. 不舒服</item>
+        <item>malcontent adj. 不满的,不服的 n.不满者</item>
+        <item>malicious adj. 怀恶意的,恶毒的</item>
+        <item>malign adj. 有恶意的 vt. 诽谤</item>
+        <item>malinger v.假装不适以逃避工作</item>
+        <item>malleable adj. 可塑的，易改变的</item>
+        <item>malodor n. 恶臭</item>
+        <item>mandatory adj. 命令的,强制的</item>
+        <item>mangle vt. 破坏, 毁损</item>
+        <item>mangy adj.污秽的，褴褛的</item>
+        <item>mania n. 狂躁,热衷,狂热</item>
+        <item>manifest n. 载货清单</item>
+        <item>manifest adj. 显然的,明显的</item>
+        <item>manipulate vt. 巧妙操作</item>
+        <item>manumit v. 解放</item>
+        <item>manuscript n. 手稿</item>
+        <item>mar v. 损坏，破坏</item>
+        <item>marsh n. 沼泽,湿地</item>
+        <item>marsupial n.有袋类动物</item>
+        <item>martial adj. 战争的, 军事的</item>
+        <item>martinet n. 纪律严明之人</item>
+        <item>marvel n. 奇迹</item>
+        <item>masquerade v. 伪装，掩饰</item>
+        <item>masticate v. 咀嚼</item>
+        <item>matriculate vt. 入学</item>
+        <item>mattress n. 床垫</item>
+        <item>maudlin adj. 多愁善感的，感情脆弱的</item>
+        <item>nadir n. 最低点</item>
+        <item>naive adj.天真的,纯朴的</item>
+        <item>narcissism n. 自恋</item>
+        <item>nascent adj. 新生的</item>
+        <item>natty adj. 整洁的，时髦的</item>
+        <item>nauseate v. 使厌恶，使作呕</item>
+        <item>naysay n. 拒绝</item>
+        <item>nebulous adj. 模糊的，星云的</item>
+        <item>needy adj. 贫困的</item>
+        <item>nefarious adj.违法的，邪恶的</item>
+        <item>negation n. 否定, 拒绝</item>
+        <item>negligence n. 疏忽</item>
+        <item>neologism n.新语</item>
+        <item>negotiate vi. 商议,谈判</item>
+        <item>neophyte n.初学者，新信徒</item>
+        <item>nepotism n.裙带关系，偏袒亲属</item>
+        <item>nerve vt. 鼓起勇气 n. 神经，胆量</item>
+        <item>nettle v. 烦忧，激恼</item>
+        <item>nexus n. 连结,连系,核心,中心</item>
+        <item>nibble v. 小口咬</item>
+        <item>nil n. 零</item>
+        <item>nip v. 一口饮酒</item>
+        <item>nitpick v. 挑剔,吹毛求疵</item>
+        <item>nocturnal adj. 夜间发生的,夜曲的</item>
+        <item>noisome adj.有毒的 恶臭的，非常讨厌的</item>
+        <item>nomad n.流浪者, 游牧民</item>
+        <item>nominal adj. 名义上的，不重要的</item>
+        <item>nonchalant adj. 冷漠的</item>
+        <item>nondescript adj. 没有特征的，平凡的</item>
+        <item>nonentity n. 不存在,不重要之人</item>
+        <item>nonplus n. 困惑,进退两难</item>
+        <item>nonsense n. 胡言乱语</item>
+        <item>notch vt.刻痕</item>
+        <item>novelty n. 新奇</item>
+        <item>noxious adj.有害的,有毒的</item>
+        <item>nuance n. 细微的差异</item>
+        <item>nucleate v. 使…聚集成核</item>
+        <item>nudge n.v. 用肘轻推，引起注意</item>
+        <item>nugatory adj. 无关紧要的</item>
+        <item>nurture vt. 抚育,给…营养</item>
+        <item>oasis n. 沙漠绿洲</item>
+        <item>oath n. 誓言, 宣誓</item>
+        <item>obdurate adj.固执的,执拗的;冷酷的</item>
+        <item>obedient adj. 服从的,顺从的</item>
+        <item>obeisance n. 鞠躬,敬礼</item>
+        <item>obfuscate v. 使困惑，使迷惑</item>
+        <item>obituary n.讣告</item>
+        <item>obligatory adj.强制性的,义务的</item>
+        <item>obliging adj. 乐于助人的</item>
+        <item>oblique adj. 倾斜的,间接的</item>
+        <item>obliterate v. 涂掉，删除</item>
+        <item>oblivious adj.遗忘的,不注意的</item>
+        <item>obloquy n. 谩骂,诽谤</item>
+        <item>obscure adj.暗的,模糊的,无名的 v.使模糊</item>
+        <item>obsequious adj. 谄媚的,奉承的,顺从的</item>
+        <item>observatory n. 天文台</item>
+        <item>obsess vt.迷住;使困窘,使烦扰</item>
+        <item>obstinate adj.固执的, 倔强的</item>
+        <item>obstruct v. 阻碍，阻塞</item>
+        <item>obtuse adj.愚笨的,不锐利的</item>
+        <item>obviate vt. 除去，排除</item>
+        <item>occlude vt. 阻塞，闭塞</item>
+        <item>occult adj. 神秘的，不可思议的</item>
+        <item>ode n. 颂诗,赋</item>
+        <item>odium n.憎恶，讨厌</item>
+        <item>offbeat adj. 不平常的，离奇的</item>
+        <item>offhand adj. 即席的，无准备的</item>
+        <item>officious adj.多管嫌事的，好忠告人的</item>
+        <item>offish adj. 冷淡的</item>
+        <item>off-key adj. 走调的不规则的</item>
+        <item>olfaction n. 嗅觉</item>
+        <item>ominous adj.预兆的, 恶兆的, 不吉利的</item>
+        <item>omniscient adj.全知的,无所不知的</item>
+        <item>onerous adj. 繁重的,费力的</item>
+        <item>opaque adj. 不透明的，难懂的</item>
+        <item>opine vt. 表达观点</item>
+        <item>opportune adj. 合适的，适当的</item>
+        <item>opprobrious adj. 无礼的,粗野的</item>
+        <item>oracle n. 神谕</item>
+        <item>oration n. 演说,致辞</item>
+        <item>orient vt. 使适应, 确定方向</item>
+        <item>original adj. 最初的,原始的,有创意的</item>
+        <item>ornithology n. 鸟类学</item>
+        <item>orthodoxy n. 信仰正统,正教</item>
+        <item>oscillate v. 使振动,使动摇,犹豫</item>
+        <item>ossify v.硬化，僵化</item>
+        <item>ostentatious adj. 卖弄的,夸耀的</item>
+        <item>ostracism n.放逐,排斥</item>
+        <item>oust vt. 剥夺,驱逐</item>
+        <item>outgoing adj. 外向的，爱社交的</item>
+        <item>outlandish adj. 古怪的, 奇异的</item>
+        <item>outmaneuver v. 以策略制胜;智取</item>
+        <item>outset n.开端, 开始</item>
+        <item>outwit v. 瞒骗, 以智取胜</item>
+        <item>overbearing adj. 傲慢的</item>
+        <item>overlap vt. 重叠,重复</item>
+        <item>overt adj.公开的,非秘密的</item>
+        <item>overture n. 前奏曲,序曲</item>
+        <item>oxymoron [·] n. 矛盾修饰法</item>
+        <item>pachyderm n.厚皮类动物, 迟钝的人</item>
+        <item>pacify vt. 使平静,安慰</item>
+        <item>pack n. 一群</item>
+        <item>padding n. 填塞物</item>
+        <item>paean n. 赞美歌</item>
+        <item>painstaking adj. 艰苦的</item>
+        <item>palatable adj.美味的</item>
+        <item>palatial adj. 宫殿般的，豪华的</item>
+        <item>alette n.调色板，颜料</item>
+        <item>pall v.感到腻烦，失去兴趣</item>
+        <item>palliate v. 减轻)</item>
+        <item>pallid adj.苍白的</item>
+        <item>palmy adj.繁荣的</item>
+        <item>palpable adj.可触知的，明显的，易觉察的</item>
+        <item>palter vi.欺骗</item>
+        <item>paltry adj.无价值的;微不足道的</item>
+        <item>pan vt.【口语】严厉批评</item>
+        <item>panache n.羽饰;假威风，炫耀</item>
+        <item>pancreas n.胰腺</item>
+        <item>pandemic adj.全国流行的</item>
+        <item>pandemonium n.喧哗吵闹</item>
+        <item>panegyric n. 赞扬，夸大的颂词</item>
+        <item>panoramic n. 全景的</item>
+        <item>pantry n.食品柜，餐具室</item>
+        <item>parable n. 寓言，比喻</item>
+        <item>paradigm n. 典范， 范例</item>
+        <item>paradise n.天堂</item>
+        <item>paradox n. 似是而非的论点，自相矛盾的话</item>
+        <item>paragon n. 模范，典型</item>
+        <item>paramount adj. 最重要的，最高权力的</item>
+        <item>paranoia n. 偏执狂</item>
+        <item>paraphrase vt. 简要复述，解释</item>
+        <item>parch vi. 烤干</item>
+        <item>parenthesis n.插入语;附带;插曲;圆括号</item>
+        <item>pariah n. 贱民，底层民众</item>
+        <item>parity n. 同等，平等</item>
+        <item>parlance n. 说话的方式</item>
+        <item>parody n.诙谐改编的诗文 v. 做模仿诗文</item>
+        <item>paroxysm n.发作，突发</item>
+        <item>parquetry n. 镶木地板艺术或图案</item>
+        <item>parrot vt. 鹦鹉学舌，机械地模仿</item>
+        <item>quack v.呷呷叫n.呷呷叫声, 庸医,骗子adj.骗人</item>
+        <item>quaff vt.vi. 一口气喝干，大口地喝</item>
+        <item>quail vi. 胆怯，畏缩</item>
+        <item>qualified adj.合格的，受限制的</item>
+        <item>quandary n. 困惑，窘境，进退两难</item>
+        <item>quarantine n. 隔离检疫期，隔离</item>
+        <item>quarry 1. n. 采石场2. n.猎物，追求物，出处</item>
+        <item>quash v. 取消，拒绝接受，撤销，镇压</item>
+        <item>quell vt. 压制，平息，减轻</item>
+        <item>quench vt. 结束，熄灭，冷浸，淬火</item>
+        <item>querulous adj. 抱怨的，发牢骚的</item>
+        <item>quibble n. 遁词，挑剔</item>
+        <item>quiescent adj. 静止的，寂静的</item>
+        <item>quixotic adj. 不切实际的，空想的</item>
+        <item>quota n.配额, 限额</item>
+        <item>quotidian adj.每日的，平凡的</item>
+        <item>provincial adj. 省的，地方的，偏狭的</item>
+        <item>provisional adj.暂时的，暂定的，临时的</item>
+        <item>provisory adj. 有附文的,有附带条件的,暂时的</item>
+        <item>provoke vt. 激怒，惹起，驱使</item>
+        <item>prowess n. 英勇，勇敢</item>
+        <item>prowl v.潜行于...偷偷地漫游，如为了获取猎物或赃物</item>
+        <item>prude n. 装成规矩的女人，过分正经的女人</item>
+        <item>prudent adj. 审慎的，精明的，节俭的</item>
+        <item>prudish adj. 装淑女样子的，过分规矩的</item>
+        <item>prune n.梅干v. 修剪，剪除</item>
+        <item>pry v.刺探，打听;撬开</item>
+        <item>pseudonym n.假名;笔名</item>
+        <item>psychology n. 心理学，心理状态</item>
+        <item>pucker v.折叠;噘嘴</item>
+        <item>puckish adj. 爱恶作剧的，淘气的，顽皮的</item>
+        <item>puerile adj. 幼稚的，儿童的</item>
+        <item>puissance n. 权力，权势，力量，影响</item>
+        <item>pulchritude n. 美丽</item>
+        <item>pullet n. 小母鸡;小姑娘</item>
+        <item>pulverize v.研磨成粉，破坏</item>
+        <item>pun n.双关语</item>
+        <item>punch line n.妙语 that makes the point)</item>
+        <item>punctilious adj. 精密细心的,一丝不苟的</item>
+        <item>pundit n.权威人士，专家</item>
+        <item>pungent adj. 辛辣的，刺激性的，严厉的</item>
+        <item>puny adj. 微小的，弱小的，微不足道的</item>
+        <item>purity n.纯净，纯洁，纯度</item>
+        <item>purlieu n. 森林边缘地;常去的地方</item>
+        <item>purloin vt.vi. 偷窃，盗取</item>
+        <item>purvey v. 供给，供应</item>
+        <item>pusillanimous adj. 懦弱的</item>
+        <item>sabbatical adj. 安息日的,周期性休息的</item>
+        <item>sabotage vt. 妨害,破坏</item>
+        <item>saccharine n.糖精</item>
+        <item>sacrilege n. 亵渎圣物,冒渎,悖理逆天的行为</item>
+        <item>saddle n.鞍, 鞍状物 v. 压抑,负担</item>
+        <item>safeguard n.保护措施,护照</item>
+        <item>sagacious adj.聪明的，睿智的</item>
+        <item>salient adj.显著的，突出的</item>
+        <item>salmon n. 大马哈鱼</item>
+        <item>salubrious adj . 有益健康的</item>
+        <item>salutary adj.有益的，有益健康的</item>
+        <item>salutation n.致敬,打招呼</item>
+        <item>salvage v.抢救，海上救助</item>
+        <item>salve n. 药膏，抚慰剂v. 减轻，缓和</item>
+        <item>sanctify vt. 使神圣,敬神,使成为神圣之物</item>
+        <item>sanctuary n. 避难所</item>
+        <item>sanction v.批准, 同意,认可</item>
+        <item>sanctimonious adj.假装虔诚的</item>
+        <item>sand v. 磨光 n. 沙</item>
+        <item>sanguine adj. 红润的充满希望的愉快的</item>
+        <item>sanitation n.卫生，卫生设施</item>
+        <item>sap vt.削弱n.树液，体液，活力</item>
+        <item>sapient adj. 贤明的,有洞察力的</item>
+        <item>sarcasm n. 讽刺,轻蔑</item>
+        <item>sartorial adj. 裁缝匠的,缝工的,裁缝的</item>
+        <item>sate [seit] 满足,充足,饮食过度</item>
+        <item>satiate v.饱足,过分满足</item>
+        <item>satire n.讽剌作品;讽刺</item>
+        <item>saturate v.使饱和, 浸透</item>
+        <item>saturnine adj. 忧郁的,阴沉的</item>
+        <item>saunter n./v.闲逛，漫步</item>
+        <item>savanna n. 平原;草原</item>
+        <item>savant 博学之士,学者</item>
+        <item>savory adj. 美味的,可口的</item>
+        <item>savvy n.老练,机智</item>
+        <item>sawdust n.锯屑</item>
+        <item>scabbard n.鞘 v.插入鞘中</item>
+        <item>scads n. 许多，大量</item>
+        <item>scale n.天平,秤盘;音阶</item>
+        <item>scalpel n.手术刀</item>
+        <item>scan vt.分析韵律</item>
+        <item>tacit adj.心照不宣的，有默契的，暗示的</item>
+        <item>taciturn adj. 沉默寡言的</item>
+        <item>tackle n. 传动装置，滑车vt. 固定;解决</item>
+        <item>tact n.机敏，圆滑</item>
+        <item>tactile adj. 有触觉的,能触知的</item>
+        <item>tactless adj. 无机智的，不老练的，不圆滑的</item>
+        <item>tadpole n. 蝌蚪</item>
+        <item>talisman n.护身符,感染</item>
+        <item>talon n.猛禽的锐爪</item>
+        <item>tamper v.窜改，损害</item>
+        <item>tangent adj. 离题的，不相关的;相切的 n.切线</item>
+        <item>tangible adj. 可感知的,明显的;切实的，明确的</item>
+        <item>tangy adj. 强烈的,扑鼻的</item>
+        <item>tantalize v. 挑惹，挑逗</item>
+        <item>tantamount adj. 与…相等的</item>
+        <item>tantrum n. 勃然大怒，发脾气</item>
+        <item>taper vi.vt.逐渐变细,逐渐减少</item>
+        <item>tapestry n. 挂毯</item>
+        <item>tardy adj. 缓慢的，迟缓的</item>
+        <item>tarnish n./v. 失去光泽，晦暗</item>
+        <item>tarpaulin n. 涂油防水布，防水衣，防水帽</item>
+        <item>tasty adj. 十分吸引人的</item>
+        <item>tatty adj.破旧的，褴褛的</item>
+        <item>taunt v. 嘲笑，讥笑</item>
+        <item>taut adj.拉紧的整洁的, 紧张的</item>
+        <item>tawdry adj.俗丽的, 非常华丽的</item>
+        <item>taxing adj. 繁重的，费力的</item>
+        <item>taxonomist n.分类学家</item>
+        <item>tear vi.流泪, 撕破, 猛冲</item>
+        <item>tedious adj. 沉闷的,冗长乏味的</item>
+        <item>teeter vi. 摇摆，摇摇欲坠</item>
+        <item>teetotalism n. 禁酒</item>
+        <item>telling adj. 有效的，显著的</item>
+        <item>temerity n.鲁莽，大胆</item>
+        <item>temporize v. 调停;见风驶舵</item>
+        <item>temperate adj. 适度的，有节制的</item>
+        <item>tempestuous adj. 暴风雨的，暴乱的</item>
+        <item>tenable adj. 站得住脚的，无懈可击的</item>
+        <item>tenacious adj. 顽强的，固执的</item>
+        <item>tendentious adj. 有偏见的，有倾向的</item>
+        <item>tepid adj. 微温的，温热的，不太热心的</item>
+        <item>terminology 术语</item>
+        <item>terminus n. 终点，界标，终点站</item>
+        <item>terror n. 恐怖，可怕的人</item>
+        <item>terse adj.简洁的，简明的</item>
+        <item>testator n. 立遗嘱之人</item>
+        <item>testimony n. 证词，声明</item>
+        <item>testy adj. 易努的，暴躁的，性急的</item>
+        <item>tether vt.拴系, 限定, 束缚</item>
+        <item>theatrical adj. 矫揉造作的，夸张的</item>
+        <item>theology n.神学，宗教</item>
+        <item>therapeutic adj. 治疗的，治疗学的</item>
+        <item>ubiquitous adj.无所不在的，普通的</item>
+        <item>uncanny adj. 离奇的，奇异的</item>
+        <item>uncouth adj. 笨拙的，粗俗的</item>
+        <item>unctuous adj.油质的;油腔滑调的，假殷勤的</item>
+        <item>undermine v.消弱，破坏</item>
+        <item>underscore vt. 强调，划线于…底下n. 下划线</item>
+        <item>underdog n. 受害者,输家</item>
+        <item>understudy n.预备演员, 代替之人</item>
+        <item>unexceptionable adj. 无懈可击的</item>
+        <item>unflappable adj.镇定的，从容不迫的</item>
+        <item>ungainly adj.笨拙的，不雅的</item>
+        <item>unimpeachable adj.无可置疑的，无可指责的</item>
+        <item>unkempt adj.凌乱的，不整洁的</item>
+        <item>unlettered adj. 未受教育的,无学问的,文盲的</item>
+        <item>unpretentious adj. 不炫耀的, 谦逊的</item>
+        <item>unproductive adj. 徒然的，无效的</item>
+        <item>unrequited adj. 无报答的,无报酬的</item>
+        <item>unruly adj.难驾驭的，蛮横的</item>
+        <item>untenable adj. 防守不住的,站不住脚的</item>
+        <item>untold adj.数不清的，无数的</item>
+        <item>untoward adj.不顺利的，不吉利的，和顺的</item>
+        <item>unwitting adj. 不知道的，未觉察的</item>
+        <item>unwonted adj. 不习惯的,不寻常的</item>
+        <item>upbraid vt.谴责,责骂</item>
+        <item>uphold vt.支持,赞成</item>
+        <item>urbane adj.彬彬有礼的，文雅的</item>
+        <item>usurp v. 篡夺, 篡位</item>
+        <item>usury n.高利贷, 高利</item>
+        <item>utter vt. 出声;发表，宣布 adj. 绝对的,完全的，十足的</item>
+        <item>vaccinate vt.vi. 预防接种</item>
+        <item>vacillate vi. 犹豫不决;摇动，摇摆</item>
+        <item>vacuous adj.愚蠢的, 空洞的</item>
+        <item>vagary n. 奇想，奇特行为</item>
+        <item>vague adj. 含糊的,不清楚的</item>
+        <item>valediction n.告别演说，告别词</item>
+        <item>valiant adj.勇敢的，有胆量的，英勇的</item>
+        <item>valid adj. 正确的;有根据的;有效的</item>
+        <item>varnish vt.涂上清漆 ;掩饰;修饰</item>
+        <item>vanquish vt. 打败,征服,克服</item>
+        <item>vapid adj. 索然无味的，乏味的</item>
+        <item>vaporize v. 蒸发</item>
+        <item>variance n. 变化，差异，不一致</item>
+        <item>variegation n.彩色，变化多样的颜色</item>
+        <item>varnish n. 清漆 v. 涂上清漆，使有光泽</item>
+        <item>vault n. 地窖, 储藏室，金库</item>
+        <item>vaunt v. 自夸</item>
+        <item>veer v.转向，改变</item>
+        <item>vehement adj.强烈的，热情洋溢的</item>
+        <item>venal adj. 可用钱收买的，贪污受贿的</item>
+        <item>vendor n. 小贩</item>
+        <item>veneer n.镶面板，饰面</item>
+        <item>venerate vt.尊敬，崇拜</item>
+        <item>venial adj. 可宽恕的</item>
+        <item>venom n. 毒液; 强烈的憎恶或敌意</item>
+        <item>veracious adj.诚实的，说实话的</item>
+        <item>verbatim adj. 逐字的,一字不差的</item>
+        <item>verbose adj. 冗长的，罗嗦的</item>
+        <item>verdant adj. 翠绿的,青翠的</item>
+        <item>verify vt. 校验，查证，证实</item>
+        <item>veritable adj.真正的，确实的</item>
+        <item>verisimilar adj.好象真实的</item>
+        <item>vernacular n. 本国语，方言</item>
+        <item>versatile adj. 多用的，通用的，多才多艺的</item>
+        <item>versed adj.精通的, 造诣深的</item>
+        <item>vertigo n. 眩晕</item>
+        <item>verve n.气魄, 神韵;活力, 热情</item>
+        <item>waffle vi. 闲聊,胡扯</item>
+        <item>waft v.吹送, 飘荡</item>
+        <item>wag n. 爱说笑话的人，诙谐的人,机智的人</item>
+        <item>wan adj.苍白的,病态的, 暗淡的</item>
+        <item>wanderlust n.旅行癖, 流浪癖</item>
+        <item>wane vi.减少，衰退</item>
+        <item>want n. 短缺,贫困,需要</item>
+        <item>wardrobe n. 衣室，衣橱</item>
+        <item>warmonger n. 好战者, 战争贩子</item>
+        <item>warp v.弯曲，翘起</item>
+        <item>warrant vt. 担证,使有正当理由</item>
+        <item>wary adj. 小心的,机警的,谨慎的</item>
+        <item>wastrel n. 败家子，挥霍无度的人</item>
+        <item>watershed n. 分水岭，重要关头，转折点</item>
+        <item>wax vi. 增大，增强，月亮渐满</item>
+        <item>waylay vt.埋伏, 伏击, 抢劫</item>
+        <item>welter n.混乱;杂乱</item>
+        <item>wheedle vt. 诱惑，哄骗</item>
+        <item>whet vt. 磨快，使兴奋，刺激</item>
+        <item>whiff n. 轻吹</item>
+        <item>whimsical adj.古怪的，反复无常的，异想天开的</item>
+        <item>wholesome adj. 有益健康的</item>
+        <item>wickedness n.邪恶, 不道德</item>
+        <item>wince v. 避开，畏缩·flinch)</item>
+        <item>windbag n.饶舌之人,好说话的人</item>
+        <item>windy adj. 冗长的，吹嘘的</item>
+        <item>winnow v.把吹掉，扬去</item>
+        <item>winsome adj.媚人的，漂亮的</item>
+        <item>wit n. 机智机智的人,妙语</item>
+        <item>withdraw vi. 撤退，隐遁</item>
+        <item>wither v.枯萎，凋谢</item>
+        <item>withhold vt. 压制，拒给，不允许</item>
+        <item>wizen v.凋谢，枯萎 adj. 凋谢的, 枯萎的</item>
+        <item>wobble vi. 摇晃,动摇,不稳定,犹豫</item>
+        <item>woo v. 求爱</item>
+        <item>worldly adj. 世间的,世俗的,世上的</item>
+        <item>worship n. 崇拜,礼拜,尊敬</item>
+        <item>wrangler n. 争论者,牧马者</item>
+        <item>wretched adj.可怜的, 沮丧的</item>
+        <item>wry adj. 扭曲的讽刺的</item>
+        <item>xerography n. 静电印刷法</item>
+        <item>Xerox vt. vi.用静电复印</item>
+        <item>yoke vt. 给...上轭,连接,结合</item>
+        <item>yokel n.庄稼汉, 乡下人</item>
+        <item>zeal n. 热心,热诚</item>
+        <item>zenith n.顶点, 天顶, 最高点</item>
+        <item>zesty adj.热望的</item>
     </string-array>
 
 </resources>

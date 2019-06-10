@@ -35,7 +35,7 @@ public class PhoneNumberDialog extends DialogFragment {
         EditText editText = dialogView.findViewById(R.id.phone);
         editText.setText(settings.getString("phone", ""));
 
-        builder.setMessage(R.string.setting_title)
+        builder.setMessage(R.string.dialog_title)
                 .setPositiveButton(R.string.setting_confirm_button, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         EditText editText = dialogView.findViewById(R.id.phone);

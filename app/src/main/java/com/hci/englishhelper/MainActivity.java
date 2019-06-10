@@ -4,6 +4,8 @@ import android.Manifest;
 import android.app.IntentService;
 import android.app.Notification;
 import android.app.PendingIntent;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.media.AudioManager;
@@ -11,6 +13,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.provider.ContactsContract;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -68,6 +71,8 @@ import android.support.v4.app.DialogFragment;
 import android.app.Dialog;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+
+import static android.support.design.widget.Snackbar.LENGTH_SHORT;
 
 public class MainActivity extends AppCompatActivity implements EventListener, PhoneNumberDialog.PhoneDialogListener{
     public static final String PREFS_NAME = "PrefsFile";
@@ -469,7 +474,7 @@ public class MainActivity extends AppCompatActivity implements EventListener, Ph
                                     @Override
                                     public void run() {
                                         speak("你还没有告诉我你要查询的单词是什么哦，再试一次吧！");
-                                        information.setText("你还没有告诉我你要查询的单词是什么哦，再试一次吧！");
+                                        //information.setText("你还没有告诉我你要查询的单词是什么哦，再试一次吧！");
                                         tvAniamtion = new TextViewAnimation(information, "你还没有告诉我你要查询的单词是什么哦，再试一次吧！", 100);
                                     }
                                 });
@@ -484,22 +489,46 @@ public class MainActivity extends AppCompatActivity implements EventListener, Ph
 
                     dialPhoneNumber(phone);
                 }
+                else if(finalResult.contains("词") ){
+                    String word = getRandomWord();
+                    String word_only = word.substring(0, word.indexOf(" "));
+                    speak(word_only);
+                    tvAniamtion = new TextViewAnimation(information, word, 100);
+
+                    //将内容复制到剪贴板
+                    ClipboardManager cm = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                    cm.setText(word_only);
+
+                    //弹出提示
+                    Snackbar copySnackbar = Snackbar.make(findViewById(R.id.messageCoordinatorLayout),
+                            R.string.popup_message_copy, LENGTH_SHORT);
+                    copySnackbar.show();
+                }
                 else{
                     speak("这个命令我还没有学会哦～");
-                    information.setText("这个命令我还没有学会哦～");
+                    //information.setText("这个命令我还没有学会哦～");
                     tvAniamtion = new TextViewAnimation(information, "这个命令我还没有学会哦～", 100);
                 }
             }
             else
             {
                 speak("抱歉，我还没有听清楚～请确保网络连通和麦克风权限开启哦！");
-                information.setText("抱歉，我还没有听清楚～请确保网络连通和麦克风权限开启哦！");
+                //information.setText("抱歉，我还没有听清楚～请确保网络连通和麦克风权限开启哦！");
                 tvAniamtion = new TextViewAnimation(information, "抱歉，我还没有听清楚～请确保网络连通和麦克风权限开启哦！", 100);
             }
             voice.setEnabled(true);
         }
     }
     //tvAniamtion = new TextViewAnimation(information, "呵呵测试一下？", 100);//字符动画！
+
+    private String getRandomWord() {
+        String word = null;
+        String[] vocabulary = this.getResources()
+                .getStringArray(R.array.vocabulary);      //从resource中获取欢迎提示语array
+        int index = (int) (Math.random() * (vocabulary.length - 1));
+        word = vocabulary[index];
+        return word;
+    }
 
     //拨打电话
     public void dialPhoneNumber(String phoneNumber) {
@@ -531,11 +560,20 @@ public class MainActivity extends AppCompatActivity implements EventListener, Ph
 
         // Commit the edits!
         editor.commit();
+
+        //弹出提示
+        Snackbar settingSnackbar = Snackbar.make(findViewById(R.id.messageCoordinatorLayout),
+                R.string.popup_message_positive, LENGTH_SHORT);
+        settingSnackbar.show();
     }
 
     @Override
     public void onDialogNegativeClick(PhoneNumberDialog dialog) {
         // User touched the dialog's negative button
+        //弹出提示
+        Snackbar settingSnackbar = Snackbar.make(findViewById(R.id.messageCoordinatorLayout),
+                R.string.popup_message_negative, LENGTH_SHORT);
+        settingSnackbar.show();
     }
 
     @Override

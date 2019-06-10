@@ -3,15 +3,76 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/phone"
-        android:layout_width="200dp"
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="48dp"
         android:layout_marginTop="4dp"
         android:layout_marginRight="4dp"
         android:layout_marginBottom="4dp"
+        android:text="@string/help_1"
+        android:textColor="@color/colorAccent"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="72dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"
+        android:text="@string/help_2"
+        android:textColor="#F48FB1"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="72dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"
+        android:text="@string/help_3"
+        android:textColor="#F48FB1"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="72dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"
+        android:text="@string/help_4"
+        android:textColor="#F48FB1"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="0dp"
+        android:text="@string/setting_title"
+        android:textColor="@color/colorPrimary"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="72dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="0dp"
         android:hint="@string/setting_text_field"
-        android:inputType="phone" />
+        android:inputType="phone"
+        android:textSize="14sp" />
 
 </LinearLayout>
