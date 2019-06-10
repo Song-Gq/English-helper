@@ -80,4 +80,11 @@ public class PhoneNumberDialog extends DialogFragment {
                     + " must implement NoticeDialogListener");
         }
     }
+
+    @Override
+    public void onCancel(DialogInterface dialog)
+    {
+        // Send the negative button event back to the host activity
+        mListener.onDialogNegativeClick(PhoneNumberDialog.this);
+    }
 }
