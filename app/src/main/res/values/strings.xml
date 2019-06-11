@@ -6,6 +6,8 @@
         <item>欢迎使用English Helper，说说看“我想查询+中文”来向我提问吧！</item>
         <item>欢迎使用English Helper，可以跟我说“打电话给老师”向老师求助哦！</item>
         <item>欢迎使用English Helper，说说看“每日一词”来学习一个新单词吧！</item>
+        <item>欢迎使用English Helper，可以试着对我读每日一词给出的单词来检查发音哦！</item>
+        <item>欢迎使用English Helper，把想查的单词拼给我听，试试“搜索O-R-A-N-G-E”！</item>
         <item>欢迎使用English Helper，今天你英语进步了吗？</item>
     </string-array>
     <string name="dialog_title">帮助和设置</string>
@@ -16,12 +18,13 @@
     <string name="speak_button_description">tap and speak</string>
     <string name="popup_message_positive">号码已保存</string>
     <string name="popup_message_negative">号码未更改</string>
-    <string name="setting_title">请在下方填写老师的电话号码哦</string>
+    <string name="setting_title">请在下方填写老师的电话号码哦：</string>
     <string name="help_1">可以试着对我说：</string>
     <string name="help_2">“我想知道苹果的英文是什么”</string>
     <string name="help_3">“请帮我打电话给老师求助”</string>
     <string name="help_4">“每日一词”</string>
     <string name="help_5">“搜一下O-R-A-N-G-E”</string>
+    <string name="help_6">···还可以试着对我读每日一词\n给出的单词哦</string>
     <string name="popup_message_copy">单词已复制到剪贴板</string>
     <string-array name="keywords_post">
         <item>的英语</item>
@@ -48,6 +51,7 @@
     </string-array>
     <string-array name="keywords_pre">
         <item>把</item>
+        <item>告诉我</item>
         <item>查询一下</item>
         <item>搜索一下</item>
         <item>查找一下</item>
