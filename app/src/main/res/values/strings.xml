@@ -35,10 +35,14 @@
         <item>的意思</item>
         <item>用英语</item>
         <item>用英文</item>
+        <item>用外语</item>
+        <item>用外文</item>
         <item>的中文</item>
         <item>的汉语</item>
         <item>用中文</item>
         <item>用汉语</item>
+        <item>怎么翻译</item>
+        <item>如何翻译</item>
         <item>翻译</item>
         <item>怎么表达</item>
         <item>如何表达</item>
@@ -52,6 +56,9 @@
     <string-array name="keywords_pre">
         <item>把</item>
         <item>告诉我</item>
+        <item>什么叫做</item>
+        <item>什么叫作</item>
+        <item>什么叫</item>
         <item>查询一下</item>
         <item>搜索一下</item>
         <item>查找一下</item>
