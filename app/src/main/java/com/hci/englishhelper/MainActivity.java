@@ -78,7 +78,8 @@ import static android.support.design.widget.Snackbar.LENGTH_SHORT;
 public class MainActivity extends AppCompatActivity implements EventListener, PhoneNumberDialog.PhoneDialogListener {
     public static final String PREFS_NAME = "PrefsFile";
     private String phone = "";
-
+    private String lastDailyWord="";
+    private String lastDailyWordAll="";
     protected TextView information;
     protected ImageButton voice;
     private EventManager asr;
@@ -530,7 +531,6 @@ public class MainActivity extends AppCompatActivity implements EventListener, Ph
                     // Restore preferences
                     SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
                     phone = settings.getString("phone", "");
-
                     dialPhoneNumber(phone);
                 } else if (finalResult.contains("词")) {
                     String word = getRandomWord();
@@ -547,7 +547,17 @@ public class MainActivity extends AppCompatActivity implements EventListener, Ph
                     Snackbar copySnackbar = Snackbar.make(findViewById(R.id.messageCoordinatorLayout),
                             R.string.popup_message_copy, LENGTH_LONG);
                     copySnackbar.show();
-                } else {
+                    lastDailyWord=word_only;
+                    lastDailyWordAll=word;
+                } else if((finalResult.trim()).toLowerCase().charAt(0)<='z' && (finalResult.trim()).toLowerCase().charAt(0)>='a'){
+                    if(finalResult.trim().equals(lastDailyWord.toLowerCase())) {
+                        speak("读的真好！正确发音是："+lastDailyWord);
+                        tvAniamtion = new TextViewAnimation(information, "读的真好！～", 100);
+                    }else{
+                        speak("你读的不标准哦，再试试吧！正确发音是:"+lastDailyWord);
+                        tvAniamtion = new TextViewAnimation(information, "你读的是:"+finalResult.trim()+" 不标准哦，再试试吧！\n"+lastDailyWord + "\n" + lastDailyWordAll.substring(lastDailyWordAll.indexOf(" ") + 1), 100);
+                    }
+                } else{
                     speak("这个命令我还没有学会哦～");
                     //information.setText("这个命令我还没有学会哦～");
                     tvAniamtion = new TextViewAnimation(information, "这个命令我还没有学会哦～", 100);
