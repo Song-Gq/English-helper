@@ -429,6 +429,19 @@ public class MainActivity extends AppCompatActivity implements EventListener, Ph
         return false;
     }
 
+    //判断内容是否全为英文
+    private boolean isEnglish(String str) {
+        if (str != null) {
+            for (int i = 0; i < str.length(); i++) {
+                //只要字符串中有中文则为中文
+                if ((str.charAt(i) + "").getBytes().length != 1) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
     //按钮按下的监听函数
     public void voiceRecognition(View view) {
         //speak("");
@@ -460,7 +473,12 @@ public class MainActivity extends AppCompatActivity implements EventListener, Ph
                             query = matchKeywords_post(query);
 
                             if (!query.trim().equals("")) {
-                                String resultJson = new TransApi().getTransResult(query, "auto", "en");
+                                final Boolean isEng = isEnglish(query);
+                                String resultJson;
+                                if(isEng)
+                                    resultJson = new TransApi().getTransResult(query, "auto", "zh");
+                                else
+                                    resultJson = new TransApi().getTransResult(query, "auto", "en");
                                 //拿到结果，对结果进行解析。
                                 Gson gson = new Gson();
                                 TranslateResult translateResult = gson.fromJson(resultJson, TranslateResult.class);
@@ -477,12 +495,18 @@ public class MainActivity extends AppCompatActivity implements EventListener, Ph
                                             dst = dst + "\n" + s.getDst();
                                         }
 
-                                        speak(query + "的英文是" + dst);
+                                        if(isEng)
+                                            speak(query + "的中文是" + dst);
+                                        else
+                                            speak(query + "的英文是" + dst);
                                         information.setText(query + "\n" + dst.trim());
 
                                         //将内容复制到剪贴板
                                         ClipboardManager cm = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-                                        cm.setText(dst.trim());
+                                        if(isEng)
+                                            cm.setText(query);
+                                        else
+                                            cm.setText(dst.trim());
 
                                         //弹出提示
                                         Snackbar copySnackbar = Snackbar.make(findViewById(R.id.messageCoordinatorLayout),
